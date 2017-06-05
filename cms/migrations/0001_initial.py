@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             name='Site',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(default='Ilic', max_length=140)),
+                ('title', models.CharField(default='illic', max_length=140)),
                 ('social_description', models.CharField(default='Social description', max_length=140)),
                 ('who', ckeditor.fields.RichTextField(verbose_name='¿Quiénes somos?')),
                 ('when', ckeditor.fields.RichTextField(verbose_name='¿Cuándo acudir a Terapia')),

@@ -15,7 +15,7 @@ else:
     ALLOWED_HOSTS = [
         '.arlefreak.com',
         '.ellugar.co',
-        '.ilic.com',
+        '.illic.com',
         '127.0.0.1',
         'localhost',
     ]
@@ -45,7 +45,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ilic.urls'
+ROOT_URLCONF = 'illic.urls'
 
 TEMPLATES = [
     {
@@ -63,7 +63,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ilic.wsgi.application'
+WSGI_APPLICATION = 'illic.wsgi.application'
 
 
 DATABASES = {
@@ -135,13 +135,13 @@ if DEBUG:
 else:
     COLLECTFAST_ENABLED = True
     STATICFILES_LOCATION = 'static'
-    STATICFILES_STORAGE = 'ilic.custom_storages.StaticStorage'
+    STATICFILES_STORAGE = 'illic.custom_storages.StaticStorage'
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 MEDIA_ROOT = 'media'
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'ilic.custom_storages.MediaStorage'
+DEFAULT_FILE_STORAGE = 'illic.custom_storages.MediaStorage'
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'

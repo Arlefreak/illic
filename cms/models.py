@@ -25,7 +25,7 @@ def upload_to_therapy(instance, filename):
         filename_ext.lower(),)
 
 class Site(SingletonModel):
-    title = models.CharField(max_length=140, default='Ilic')
+    title = models.CharField(max_length=140, default='Illic')
     social_description = models.CharField(max_length=140, default='Social description')
     who = RichTextField('¿Quiénes somos?')
     when = RichTextField('¿Cuándo acudir a Terapia')

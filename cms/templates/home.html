@@ -2,12 +2,12 @@
 {% load solo_tags %}
 {% load static %}
 {% block content %}
-<section class="terapias-small">
+<section class="small-therapy">
     <div class="wrapper">
         <img src="{% static "img/logo_blanco.svg" %}" alt="">
-        <div>
+        <div class="small-therapy-container">
             {% for item in list %}
-            <article>
+            <article class="small-{{item.slug}}">
                 <img src="{{ item.image.url }}" alt="{{ item.title }}">
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.small_text }}</p>
@@ -41,7 +41,7 @@
         <ul>
             {% for item in list %}
             <li>
-                <img src="img/arbol.svg" alt="arbol">
+                <img src="{% static "img/arbol.svg" %}" alt="arbol">
                 <a href="">{{ item.title }}</a>
             </li>
             {% endfor %}
