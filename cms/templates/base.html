@@ -45,6 +45,7 @@
         <meta name="twitter:url" content="" />
         <meta name="twitter:description" content="{{ description }}"/>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{% static "css/style.css" %}">
 
         {% block header-refs %}{% endblock %}
@@ -57,30 +58,7 @@
         {% include "header.html" %}
         {% endblock %}
 
-        {% block content %}
-        <main>
-            <article>
-                <h2>Lorem</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Morbi enim sapien, aliquam vel pharetra quis, facilisis at felis.
-                    Suspendisse potenti.
-                    Integer pellentesque nunc ut sem ultricies luctus.
-                    Nam accumsan ac sem vel feugiat.
-                    Aliquam erat volutpat.
-                    Nullam convallis arcu sit amet sem consequat ullamcorper.
-                    Curabitur nisl diam, pulvinar non efficitur a, convallis vitae lectus.
-                    Nam faucibus pretium erat, ac molestie nulla scelerisque non.
-                    Pellentesque cursus ultrices tellus, nec ornare justo vehicula vitae.
-                    Etiam pellentesque rhoncus augue sit amet finibus.
-                    Aenean ut mauris finibus, maximus lectus at, tincidunt odio.
-                    Nam sem libero, facilisis eu quam in, semper cursus quam.
-                    Etiam dolor ligula, porta quis fringilla non, dictum at elit.
-                    Cras ut metus non ligula sollicitudin aliquet a non erat.
-                </p>
-            </article>
-        </main>
-        {% endblock %}
+        {% block content %}{% endblock %}
 
         {% block footer %}
         {% include "footer.html" %}

@@ -8,11 +8,13 @@ DEFAULT_PREVIEW = ''
 def home(request):
     single = Site.get_solo()
     list = Therapy.objects.all()
+    list_therapist = Therapist.objects.all()
     context = {
         'title' : single.title,
         'description': single.social_description,
         'preview': single.preview_image,
         'list': list,
+        'list_therapist': list_therapist,
         'single': single,
     }
 

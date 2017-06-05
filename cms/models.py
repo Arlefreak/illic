@@ -63,3 +63,21 @@ class Therapy(SortableMixin):
         verbose_name = 'Terapia'
         verbose_name_plural = 'Terapias'
         ordering = ['order']
+
+
+class Therapist(SortableMixin):
+    order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
+    title = models.CharField('Nombre', max_length=140, default='Terapeuta')
+    slug = models.CharField(max_length=200, editable=False)
+    phone = models.CharField(max_length=140)
+    address = models.CharField(max_length=250)
+    google_maps = models.URLField(max_length=250)
+    def save(self, *args, **kwargs):
+        self.slug = defaultfilters.slugify(self.title)
+        super(Therapist, self).save(*args, **kwargs)
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = 'Terapeuta'
+        verbose_name_plural = 'Terapeutas'
+        ordering = ['order']

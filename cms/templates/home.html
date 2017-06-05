@@ -1,3 +1,90 @@
 {% extends "base.html" %}
 {% load solo_tags %}
 {% load static %}
+{% block content %}
+<section class="terapias-small">
+    <div class="wrapper">
+        <img src="{% static "img/logo_blanco.svg" %}" alt="">
+        <div>
+            {% for item in list %}
+            <article>
+                <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.small_text }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="who">
+    <div class="wrapper">
+        <img src="" alt="">
+        <article>
+            <h2>¿Quiénes somos?</h2>
+            <div class="rich-text">{{ single.who | safe }}</div>
+        </article>
+    </div>
+</section>
+
+<section>
+    <div class="wrapper">
+        <img src="" alt="">
+        <article>
+            <h2>¿Cuándo acudir a Terápia?</h2>
+            <div class="rich-text">{{ single.when | safe }}</div>
+        </article>
+    </div>
+</section>
+
+<section>
+    <div class="wrapper">
+        <ul>
+            {% for item in list %}
+            <li>
+                <img src="img/arbol.svg" alt="arbol">
+                <a href="">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="therapy-container">
+            {% for item in list %}
+            <div class="therapy-item">
+                <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                <article>
+                    <h2>{{ item.title }}</h2>
+                    <div class="rich-text">{{ item.text | safe }}</div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="wrapper">
+        <div class="contact">
+            <a href="tel:{{ single.phone }}">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>Llámanos y agendamos tu terapoia.</span>
+            </a>
+            <a href="mailto:{{ single.email }}">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <span>Escríbenos a {{ single.email }}</span>
+            </a>
+        </div>
+        <h2>Ciudad de México</h2>
+        {% for item in list_therapist %}
+        <article>
+            <a href="{{ item.google_maps }}" target="_blank"><img src="img/pin.svg" alt="google_maps"></a>
+            <div class="info">
+                <p>Terapeuta</p>
+                <p>{{ item.title }}</p>
+                <p><a href="{{ item.google_maps }}" target="_blank">{{ item.address }}</a></p>
+                <p><a href="tel:{{ item.phone }}">{{ item.phone }}</a></p>
+            </div>
+        </article>
+        {% endfor %}
+        <p>{{ single.message }}</p>
+    </div>
+</section>
+{% endblock %}
