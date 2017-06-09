@@ -4,62 +4,61 @@
 {% block content %}
 <section class="small-therapy">
     <div class="wrapper">
-        <img src="{% static "img/logo_blanco.svg" %}" alt="">
+        <img class="white-logo" src="{% static "img/logo-blanco.svg" %}" alt="Illic">
         <div class="small-therapy-container">
             {% for item in list %}
-            <article class="small-{{item.slug}}">
-                <img src="{{ item.image.url }}" alt="{{ item.title }}">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.small_text }}</p>
+            <article class="{{item.slug}}">
+                <a href="#{{item.slug}}">
+                    <div class="image-container">
+                        <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                    </div>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.small_text }}</p>
+                </a>
             </article>
             {% endfor %}
         </div>
     </div>
+    <div class="margin"></div>
 </section>
-<section class="who">
+<section class="who text-info">
+    <div class="margin"></div>
     <div class="wrapper">
-        <img src="" alt="">
+        <img src="{{ single.who_image.url }}" alt="¿Quiénes Somos?">
         <article>
             <h2>¿Quiénes somos?</h2>
             <div class="rich-text">{{ single.who | safe }}</div>
         </article>
     </div>
+    <div class="margin"></div>
 </section>
-
-<section>
+<section class="when text-info">
     <div class="wrapper">
-        <img src="" alt="">
+        <img src="{{ single.when_image.url }}" alt="¿Cuándo acudir a Terapia?">
         <article>
-            <h2>¿Cuándo acudir a Terápia?</h2>
+            <h2>¿Cuándo acudir a Terapia?</h2>
             <div class="rich-text">{{ single.when | safe }}</div>
         </article>
     </div>
+    <div class="margin"></div>
+    <div class="margin"></div>
 </section>
 
-<section>
+{% for item in list %}
+<section class="big-terapia text-info {{item.slug}}" id="{{item.slug}}">
     <div class="wrapper">
-        <ul>
-            {% for item in list %}
-            <li>
-                <img src="{% static "img/arbol.svg" %}" alt="arbol">
-                <a href="">{{ item.title }}</a>
-            </li>
-            {% endfor %}
-        </ul>
-        <div class="therapy-container">
-            {% for item in list %}
-            <div class="therapy-item">
-                <img src="{{ item.image.url }}" alt="{{ item.title }}">
-                <article>
-                    <h2>{{ item.title }}</h2>
-                    <div class="rich-text">{{ item.text | safe }}</div>
-                </article>
-            </div>
-            {% endfor %}
-        </div>
+        <img src="{{ item.large_image.url }}" alt="¿Cuándo acudir a Terapia?">
+        <article>
+            <h2>{{ item.title }}</h2>
+            <div class="rich-text">{{ item.text | safe }}</div>
+        </article>
     </div>
+    <div class="margin"></div>
+    <div class="margin"></div>
 </section>
+{% endfor %}
 
+{% if False %}
 <section>
     <div class="wrapper">
         <div class="contact">
@@ -75,7 +74,7 @@
         <h2>Ciudad de México</h2>
         {% for item in list_therapist %}
         <article>
-            <a href="{{ item.google_maps }}" target="_blank"><img src="img/pin.svg" alt="google_maps"></a>
+            <!-- <a href="{{ item.google_maps }}" target="_blank"><img src="{% static "img/pin.svg" %}" alt="google_maps"></a> -->
             <div class="info">
                 <p>Terapeuta</p>
                 <p>{{ item.title }}</p>
@@ -87,4 +86,5 @@
         <p>{{ single.message }}</p>
     </div>
 </section>
+{% endif %}
 {% endblock %}

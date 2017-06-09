@@ -28,7 +28,9 @@ class Site(SingletonModel):
     title = models.CharField(max_length=140, default='Illic')
     social_description = models.CharField(max_length=140, default='Social description')
     who = RichTextField('¿Quiénes somos?')
+    who_image = models.ImageField(upload_to=upload_to)
     when = RichTextField('¿Cuándo acudir a Terapia')
+    when_image = models.ImageField(upload_to=upload_to)
     phone = models.CharField(max_length=140)
     email = models.EmailField(max_length=254)
     message = models.CharField(max_length=140)
@@ -49,6 +51,7 @@ class Therapy(SortableMixin):
     text = RichTextField()
     small_text = models.CharField(max_length=140, default='Terapia')
     image = models.FileField(upload_to=upload_to_therapy)
+    large_image = models.FileField(upload_to=upload_to)
     def save(self, *args, **kwargs):
         self.slug = defaultfilters.slugify(self.title)
         if self.pk is None:

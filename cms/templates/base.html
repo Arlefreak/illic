@@ -45,6 +45,7 @@
         <meta name="twitter:url" content="" />
         <meta name="twitter:description" content="{{ description }}"/>
 
+        <link href="https://fonts.googleapis.com/css?family=Slabo+27px|Source+Sans+Pro" rel="stylesheet"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{% static "css/style.css" %}">
 
@@ -64,7 +65,7 @@
         {% include "footer.html" %}
         {% endblock %}
 
-        <script src="js/script.js"></script>
+        <script src="{% static "js/script.js" %}"></script>
 
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

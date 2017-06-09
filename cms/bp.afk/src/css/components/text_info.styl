@@ -1,0 +1,24 @@
+.text-info
+    margin 20px auto 20px auto
+    .wrapper
+        display flex
+        flex-flow row wrap
+        align-items center
+        img
+            width 35%
+            max-width 300px
+            height auto
+            display block
+            border-radius $border-radius
+            @media screen and (max-width: $medium-width)
+                width 100%
+                max-width $max-width-content
+                margin 0 auto 40px auto
+        article
+            width 58%
+            height auto
+            display block
+            margin 0 0 0 40px
+            @media screen and (max-width: $medium-width)
+                width 100%
+                margin auto

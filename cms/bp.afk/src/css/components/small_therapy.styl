@@ -3,45 +3,75 @@
     background-color #3a84a1
     background-size cover
     background-image url('../img/top-background.png')
-    padding 20px 0 20px 0
+    padding 40px 0 0 0
     img
         width 100%
         height auto
         display block
         margin auto
+    .white-logo
+        width 50%
+        max-width 350px
+        height auto
+        display block
+        /* margin 0 auto 20px auto */
     div.small-therapy-container
         display flex
         flex 1
         flex-flow row wrap
         align-content stretch
         justify-content space-between
+        margin auto
+        @media screen and (max-width: $big-width)
+            max-width none
+        @media screen and (max-width: $medium-width)
+            max-width $max-width-content
+        @media screen and (max-width: $small-width)
+            max-width none
+        p
+            color $color-text-purple
+            font-size 1.0em
         article
-            width calc(100% / 4 - 40px)
-            background-color $gradient-green
-            border-radius 25%
+            width calc(100% / 4 - 20px)
+            border-radius $border-radius
             padding 20px
             box-sizing border-box
             text-align center
             display flex
             flex-flow column no-wrap
-        p
-            color $color-text-purple
-        img
+            margin 20px 0 0 0
+            @media screen and (max-width: $big-width)
+                p
+                    font-size 0.8em
+            @media screen and (max-width: $medium-width)
+                width calc(100% / 2 - 20px)
+                p
+                    font-size 1.0em
+            @media screen and (max-width: $small-width)
+                width calc(100% / 1 - 20px)
+                p
+                    font-size 1.0em
+        .image-container
+            margin 0 auto 20px auto
             background-color white
-            border-radius 50%
-            padding 5%
+            border-radius $border-radius
+            padding 10px
             box-sizing border-box
             width 50%
-            height auto
             display block
-            margin 0 auto 20px auto
+            img
+                width 100%
+                height auto
+                display block
         h3
             color white
-        .small-terapia-familiar
-            background $gradient-green
-        .small-terapia-infantil
-            background $gradient-yellow
-        .small-terapia-de-pareja
-            background $gradient-purple
-        .small-terapia-individual
-            background $gradient-blue
+            margin 0 auto 10px auto
+
+.terapia-familiar
+    background $gradient-green
+.terapia-infantil
+    background $gradient-yellow
+.terapia-de-pareja
+    background $gradient-purple
+.terapia-individual
+    background $gradient-blue

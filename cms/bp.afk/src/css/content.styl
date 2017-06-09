@@ -1,4 +1,10 @@
 h1
+h2
+h3
+h4
+h5
+    font-family $font-titles
+h1
     margin 0 auto 20px auto
     font-size 2.0em
 h2
@@ -9,10 +15,28 @@ h3
     font-size 1.6em
 p
     margin auto
-    font-size 1em
+    font-size 1.3em
     hyphens auto
+    margin 20px 0 0 0
+    line-height 1.4em
+    font-style italic
+    &:fist-of-type
+        margin 0
+
+a
+    color $gray
+    transition color 0.2s ease
+    text-decoration none
+    &:hover
+    &.active
+        color $black
 
 .wrapper
     width 90%
     display block
     margin auto
+.margin
+    display block
+    height 1px
+    width 100%
+    margin 39px 0 0 0
