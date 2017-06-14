@@ -1,0 +1,45 @@
+.contact
+    width 100%
+    margin 0 auto 20px
+    display flex
+    flex-flow row wrap
+    align-content stretch
+    justify-content center
+    .border-gradient
+        display block
+        width 48%
+        min-width 250px
+        max-width 400px
+        height auto
+        padding 2px
+        box-sizing border-box
+        border-radius $border-radius
+        text-align center
+        background $gradient-blue
+        &:first-child
+            margin 20px 1% 0 0
+        &:last-child
+            margin 20px 0 0 1%
+        @media screen and (max-width: $medium-width)
+            width 100%
+            margin 20px auto
+    a
+        width 100%
+        padding 20px
+        background $white
+        border-radius 28px
+        box-sizing border-box
+        display flex
+        flex-flow row
+        align-items center
+        justify-content center
+        &:hover
+            color $purple
+        i
+            display block
+            width 20px
+            margin 0 20px 0 0
+            font-size 2.0em
+            color $purple
+        span
+            display block
