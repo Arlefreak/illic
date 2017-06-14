@@ -291,10 +291,118 @@ a.active {
   width: 100%;
   margin: 39px 0 0 0;
 }
+.center {
+  margin: auto;
+  text-align: center;
+}
 section.big-terapia {
   padding: 80px 0 0 0;
   color: #fff;
   margin: 0;
+}
+.contact {
+  width: 100%;
+  margin: 0 auto 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-line-pack: stretch;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.contact .border-gradient {
+  display: block;
+  width: 48%;
+  min-width: 250px;
+  max-width: 400px;
+  height: auto;
+  padding: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 30px;
+  text-align: center;
+  background: -webkit-linear-gradient(top, #74ceec, #649beb);
+  background: -moz-linear-gradient(top, #74ceec, #649beb);
+  background: -o-linear-gradient(top, #74ceec, #649beb);
+  background: -ms-linear-gradient(top, #74ceec, #649beb);
+  background: linear-gradient(to bottom, #74ceec, #649beb);
+}
+.contact .border-gradient:first-child {
+  margin: 20px 1% 0 0;
+}
+.contact .border-gradient:last-child {
+  margin: 20px 0 0 1%;
+}
+@media screen and (max-width: 800px) {
+  .contact .border-gradient {
+    width: 100%;
+    margin: 20px auto;
+  }
+}
+.contact a {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 28px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.contact a:hover {
+  color: #9aa1e9;
+}
+.contact a i {
+  display: block;
+  width: 20px;
+  margin: 0 20px 0 0;
+  font-size: 2em;
+  color: #9aa1e9;
+}
+.contact a span {
+  display: block;
 }
 footer {
   background: #323b3c;
@@ -605,6 +713,54 @@ header nav ul {
     width: 100%;
     margin: auto;
   }
+}
+.therapist-container {
+  width: 50%;
+  margin: auto;
+  margin: 40px auto 40px auto;
+}
+@media screen and (max-width: 800px) {
+  .therapist-container {
+    width: 100%;
+  }
+}
+.therapist-container article {
+  margin: 0 auto 40px auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.therapist-container article:last-child {
+  margin: 0 auto 0 auto;
+}
+.therapist-container a {
+  color: #9aa1e9;
+  text-decoration: underline;
+}
+.therapist-container p {
+  margin: auto;
+}
+.therapist-container .info {
+  margin: 0 0 0 20px;
+}
+.therapist-container .avatar {
+  width: 100px;
+  height: 100px;
+/* padding 20% 0 0 0 */
+  background: #9aa1e9;
+  border-radius: 50%;
 }
 .when {
   padding: 80px 0 0 0;
