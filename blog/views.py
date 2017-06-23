@@ -15,14 +15,11 @@ class EntryDetailView(DetailView):
         context['now'] = timezone.now()
         return context
 
-def EntryListFilteredView(request):
-    f = EntryFilter(request.GET, queryset=Entry.objects.filter(publish=True))
-    return render(request, 'entry_list_filtered.html', {'filter': f})
-
 class EntryListView(ListView):
     model = Entry
     template_name = 'entry_list.html'
     def get_context_data(self, **kwargs):
+        f = EntryFilter(self.request.GET, queryset=Entry.objects.filter(publish=True))
         context = super(EntryListView, self).get_context_data(**kwargs)
-        context['now'] = timezone.now()
+        context['filter'] = f
         return context

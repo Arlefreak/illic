@@ -1,24 +1,27 @@
 <article class="blog-entry">
-    <p class="date-created">{{ object.dateCreated | date:"l, d F, Y" }}</p>
-    <a href="{% url 'entry-list' %}?author__slug={{object.author.slug}}">{{ object.author.title }}</a>
-    <h2>{{ object.title }}</h2>
-    {% if object.image %}
-    <img class="blog-image" src="{{object.image.url}}" alt="{{object.title}}">
-    {% endif %}
-    <div class="rich-text">{{ object.text | safe }}</div>
-    <div class="share-social">
-        <span>Compartir</span>
-        <ul>
-            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-            <li><a href="{% url 'entry-detail' object.slug %}"><i class="fa fa-link"></i></a></li>
-        </ul>
-    </div>
-    <div class="tags">
-        <ul>
-            {% for tag in object.tags.all %}
-            <li><a href="{% url 'entry-list' %}?tags__name={{tag.name}}">#{{ tag.name }}</li></a>
-            {% endfor %}
-        </ul>
+    <div class="wrapper">
+        <p class="date-created">{{ object.dateCreated | date:"l, d F, Y" }}</p>
+        <a class="entry-author" href="{% url 'entry-list' %}?author__slug={{object.author.slug}}">{{ object.author.title }}</a>
+        <h2>{{ object.title }}</h2>
+        {% if object.image %}
+        <img class="blog-image" src="{{object.image.url}}" alt="{{object.title}}">
+        {% endif %}
+        <div class="rich-text">{{ object.text | safe }}</div>
+        <div class="share-social">
+            <span>Compartir: </span>
+            <ul>
+                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href="{% url 'entry-detail' object.slug %}"><i class="fa fa-link"></i></a></li>
+            </ul>
+        </div>
+        <div class="tags">
+            <span>Etiquetas: </span>
+            <ul>
+                {% for tag in object.tags.all %}
+                <li><a href="{% url 'entry-list' %}?tags__name={{tag.name}}">#{{ tag.name }}</li></a>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </article>

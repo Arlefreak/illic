@@ -3,20 +3,45 @@
 {% load static %}
 {% block content %}
 
-<section class="blog-header">
+<section class="blog-banner">
     <div class="wrapper">
         <img class="white-logo" src="{% static "img/logo-blanco.svg" %}" alt="Illic">
     </div>
 </section>
 
-<section class="narrare-header">
+<section class="narrare-banner">
     <div class="wrapper">
         <img class="narrare-logo" src="{% static "img/narrare.png" %}" alt="Narrare"/>
         <h1>Narrare</h1>
     </div>
 </section>
-{{ date_range }}
-{% for object in object_list %}
-    {% include 'entry.html' with object=object %}
+
+<section class="filter-form">
+    <form action="" method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+</section>
+{% for object in filter.qs %}
+{% include 'entry.html' with object=object %}
 {% endfor %}
+<section class="pagination">
+    {# .... **Now the pagination section** .... #}
+    {% if is_paginated %}
+    <div class="pagination">
+        <span class="page-links">
+            {% if page_obj.has_previous %}
+            <a href="{% url 'entry-list' %}?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+            <span class="page-current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+            {% if page_obj.has_next %}
+            <a href="{% url 'entry-list' %}?page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
+    {# .... **More content, footer, etc.** .... #}
+</section>
 {% endblock %}
