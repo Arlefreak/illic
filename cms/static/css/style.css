@@ -421,6 +421,11 @@ header {
   height: 100px;
   width: 100%;
 }
+@media screen and (max-width: 800px) {
+  header {
+    height: auto;
+  }
+}
 header .wrapper {
   height: 100%;
   display: -webkit-box;
@@ -454,6 +459,13 @@ header .wrapper {
 header a.logo {
   display: block;
   width: 20%;
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  header a.logo {
+    width: 50%;
+    margin: 20px auto 20px auto;
+  }
 }
 header a.logo img {
   display: block;
@@ -463,6 +475,13 @@ header a.logo img {
 header nav {
   display: block;
   width: 40%;
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  header nav {
+    margin: 0 auto 20px auto;
+    width: 100%;
+  }
 }
 header nav ul {
   display: -webkit-box;
