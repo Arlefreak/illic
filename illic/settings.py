@@ -15,7 +15,7 @@ else:
     ALLOWED_HOSTS = [
         '.arlefreak.com',
         '.ellugar.co',
-        '.illic.com',
+        '.terapianarrare.com',
         '127.0.0.1',
         'localhost',
     ]
@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'taggit',
+    'django_filters',
     'solo',
     'ckeditor',
     'cms',
@@ -99,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 
