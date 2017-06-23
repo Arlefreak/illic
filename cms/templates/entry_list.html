@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load solo_tags %}
+{% load static %}
+{% block content %}
+
+<section class="blog-header">
+    <div class="wrapper">
+        <img class="white-logo" src="{% static "img/logo-blanco.svg" %}" alt="Illic">
+    </div>
+</section>
+
+<section class="narrare-header">
+    <div class="wrapper">
+        <img class="narrare-logo" src="{% static "img/narrare.png" %}" alt="Narrare"/>
+        <h1>Narrare</h1>
+    </div>
+</section>
+{{ date_range }}
+{% for object in object_list %}
+    {% include 'entry.html' with object=object %}
+{% endfor %}
+{% endblock %}
