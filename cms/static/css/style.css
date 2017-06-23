@@ -675,9 +675,6 @@ header nav ul {
 .rich-text p {
   font-style: normal;
 }
-.rich-text em {
-  font-style: italic;
-}
 .rich-text strong {
   font-weight: bold;
   color: #000;

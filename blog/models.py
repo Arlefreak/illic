@@ -16,6 +16,7 @@ class Entry(models.Model):
     slug = models.SlugField(max_length=140, unique=True, editable=False)
     publish = models.BooleanField(default=True)
     text = RichTextField()
+    social_description = models.CharField(max_length=140)
     tags = TaggableManager()
     author = models.ForeignKey(Therapist)
     image = models.FileField(upload_to=upload_to_entry, blank=True, null=True)
