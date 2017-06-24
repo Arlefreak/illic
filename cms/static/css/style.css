@@ -256,10 +256,6 @@ h3 {
 p {
   margin: auto;
   font-size: 1.3em;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
   margin: 20px 0 0 0;
   line-height: 1.4em;
   font-style: italic;
