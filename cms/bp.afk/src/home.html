@@ -80,7 +80,7 @@
         <div class="therapist-container">
             {% for item in list_therapist %}
             <article>
-                <div class="avatar"></div>
+                <img class="avatar" src="{{ item.image.url }}" alt="{{ item.slug }}">
                 <!-- <a href="{{ item.google_maps }}" target="_blank"><img src="{% static "img/pin.svg" %}" alt="google_maps"></a> -->
                 <div class="info">
                     <p>Terapeuta</p>

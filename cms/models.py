@@ -24,6 +24,13 @@ def upload_to_therapy(instance, filename):
         instance.slug,
         filename_ext.lower(),)
 
+def upload_to_therapist(instance, filename):
+    import os.path
+    filename_base, filename_ext = os.path.splitext(filename)
+    return 'therapist/%s%s' % (
+        instance.slug,
+        filename_ext.lower(),)
+
 class Site(SingletonModel):
     title = models.CharField(max_length=140, default='Illic')
     social_description = models.CharField(max_length=140, default='Social description')
@@ -71,12 +78,18 @@ class Therapy(SortableMixin):
 class Therapist(SortableMixin):
     order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
     title = models.CharField('Nombre', max_length=140, default='Terapeuta')
+    image = models.ImageField(upload_to=upload_to_therapist)
     slug = models.CharField(max_length=200, editable=False)
     phone = models.CharField(max_length=140)
     address = models.CharField(max_length=250)
     google_maps = models.URLField(max_length=250)
     def save(self, *args, **kwargs):
         self.slug = defaultfilters.slugify(self.title)
+        if self.pk is None:
+            saved_image = self.image
+            self.image = None
+            super(Therapist, self).save(*args, **kwargs)
+            self.image = saved_image
         super(Therapist, self).save(*args, **kwargs)
     def __str__(self):
         return self.title

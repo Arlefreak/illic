@@ -26,14 +26,16 @@ class TherapyAdmin(AdminImageMixin, admin.ModelAdmin):
     )
 
 @admin.register(Therapist)
-class TherapyAdmin(admin.ModelAdmin):
+class TherapyAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = (
         'title',
         'phone',
-        'address'
+        'address',
+        'admin_image',
     )
     list_display_links = (
         'title',
         'phone',
-        'address'
+        'address',
+        'admin_image',
     )
