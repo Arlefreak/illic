@@ -1,6 +1,6 @@
 .contact
     width 100%
-    margin 0 auto 20px
+    margin 0 auto $margin
     display flex
     flex-flow row wrap
     align-content stretch
@@ -17,15 +17,15 @@
         text-align center
         background $gradient-blue
         &:first-child
-            margin 20px 1% 0 0
+            margin $margin 1% 0 0
         &:last-child
-            margin 20px 0 0 1%
+            margin $margin 0 0 1%
         @media screen and (max-width: $medium-width)
             width 100%
-            margin 20px auto
+            margin $margin auto
     a
         width 100%
-        padding 20px
+        padding $margin
         background $white
         border-radius 28px
         box-sizing border-box
@@ -37,8 +37,8 @@
             color $purple
         i
             display block
-            width 20px
-            margin 0 20px 0 0
+            width $margin
+            margin 0 $margin 0 0
             font-size 2.0em
             color $purple
         span

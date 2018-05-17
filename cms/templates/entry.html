@@ -2,7 +2,7 @@
     <div class="wrapper">
         <p class="date-created">{{ object.dateCreated | date:"l, d F, Y" }}</p>
         <a class="entry-author" href="{% url 'entry-list' %}?author__slug={{object.author.slug}}">{{ object.author.title }}</a>
-        <h2>{{ object.title }}</h2>
+        <h2 class="blog-entry-title">{{ object.title }}</h2>
         {% if object.image %}
         <img class="blog-image" src="{{object.image.url}}" alt="{{object.title}}">
         {% endif %}

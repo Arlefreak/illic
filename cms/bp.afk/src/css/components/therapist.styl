@@ -1,11 +1,11 @@
 .therapist-container
     width 50%
     margin auto
-    margin 40px auto 40px auto
+    margin $double-margin auto $double-margin auto
     @media screen and (max-width: $medium-width)
         width 100%
     article
-        margin 0 auto 40px auto
+        margin 0 auto $double-margin auto
         display flex
         flex-flow row wrap
         &:last-child
@@ -16,7 +16,7 @@
     p
         margin auto
     .info
-        margin 0 0 0 20px
+        margin 0 0 0 $margin
     .avatar
         width 100px
         height 100px
