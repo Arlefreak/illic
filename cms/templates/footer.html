@@ -1,6 +1,10 @@
+{% load solo_tags %}
+{% get_solo 'cms.Site' as site_config %}
 <footer>
     <p>
-        {{ single.footer_message }}<br>
+        {% if site_config.footer_message %}
+        {{ site_config.footer_message }}<br>
+        {% endif %}
         {% now "Y" %}
     </p>
 </footer>

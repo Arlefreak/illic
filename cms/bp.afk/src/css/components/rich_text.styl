@@ -7,6 +7,12 @@
         font-weight bold
         color $black
     ol
+    ul
+        li:not(:last-child)
+            margin 0 0 $half-margin 0
+        li
+            line-height 1.6em
+    ol
         background whitesmoke
         list-style decimal
         white-space normal
@@ -15,19 +21,8 @@
     ul
         margin $margin 0 $margin 0
         padding-left $margin
-        li:not(:last-child)
-            margin 0 0 $half-margin 0
         li
-            font-size 1em
-            line-height 1.8em
-            box-sizing border-box
-            width 100%
             &:before
                 content: '- '
             @media screen and (max-width: $mobile-width)
                 width 100%
-            a
-                font-size 1.0em
-            p
-                display inline
-                font-size 1.0em

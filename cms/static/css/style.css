@@ -304,6 +304,7 @@ section.big-terapia {
   background: -ms-linear-gradient(top, #74ceec, #649beb);
   background: linear-gradient(to bottom, #74ceec, #649beb);
   padding: 20px 0 20px 0;
+  margin: 0 auto 40px auto;
 }
 .blog-banner img {
   width: 50%;
@@ -571,13 +572,14 @@ footer {
   background: #323b3c;
   color: #fff;
   text-align: center;
-  padding: 80px 0 80px 0;
+  padding: 20px 0 20px 0;
 }
 footer a {
   color: $color1;
 }
 footer p {
   font-style: normal;
+  margin: 0;
 }
 header {
   background: #fff;
@@ -686,6 +688,14 @@ header nav ul {
   font-weight: bold;
   color: #000;
 }
+.rich-text ol li:not(:last-child),
+.rich-text ul li:not(:last-child) {
+  margin: 0 0 10px 0;
+}
+.rich-text ol li,
+.rich-text ul li {
+  line-height: 1.6em;
+}
 .rich-text ol {
   background: #f5f5f5;
   list-style: decimal;
@@ -696,17 +706,6 @@ header nav ul {
   margin: 20px 0 20px 0;
   padding-left: 20px;
 }
-.rich-text ul li:not(:last-child) {
-  margin: 0 0 10px 0;
-}
-.rich-text ul li {
-  font-size: 1em;
-  line-height: 1.8em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-}
 .rich-text ul li:before {
   content: '- ';
 }
@@ -714,13 +713,6 @@ header nav ul {
   .rich-text ul li {
     width: 100%;
   }
-}
-.rich-text ul li a {
-  font-size: 1em;
-}
-.rich-text ul li p {
-  display: inline;
-  font-size: 1em;
 }
 .small-therapy {
   width: 100%;
