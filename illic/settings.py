@@ -13,14 +13,13 @@ if(DEBUG):
     ALLOWED_HOSTS = ['*']
 else:
     ALLOWED_HOSTS = [
-        '.arlefreak.com',
         '.ellugar.co',
         '.terapianarrare.com',
         '127.0.0.1',
         'localhost',
     ]
 
-ADMINS = (('Arlefreak', 'hi@arlefreak.com'),)
+ADMINS = (('afk', 'afk@ellugar.co'),)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
