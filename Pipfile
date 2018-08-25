@@ -23,6 +23,7 @@ pytz = "*"
 six = "*"
 Unidecode = "*"
 "psycopg2-binary" = "*"
+gunicorn = "*"
 
 [dev-packages]
 
