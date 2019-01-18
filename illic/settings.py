@@ -1,15 +1,16 @@
 import os
+
 import environ
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 root = environ.Path(__file__) - 3
-env = environ.Env(DEBUG=(bool, True),)
+env = environ.Env(DEBUG=(bool, True), )
 environ.Env.read_env()
 
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
-if(DEBUG):
+if (DEBUG):
     ALLOWED_HOSTS = ['*']
 else:
     ALLOWED_HOSTS = [
@@ -19,7 +20,7 @@ else:
         'localhost',
     ]
 
-ADMINS = (('afk', 'afk@ellugar.co'),)
+ADMINS = (('afk', 'afk@ellugar.co'), )
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -36,7 +37,7 @@ INSTALLED_APPS = [
     'blog',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -66,7 +67,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'illic.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -83,19 +83,22 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -112,13 +115,11 @@ USE_TZ = True
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Format', 'Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
-        ]
+        'toolbar':
+        'Custom',
+        'toolbar_Custom': [['Format', 'Bold', 'Italic', 'Underline'],
+                           ['NumberedList', 'BulletedList'],
+                           ['Link', 'Unlink'], ['RemoveFormat', 'Source']]
     }
 }
 
@@ -137,7 +138,8 @@ else:
     COLLECTFAST_ENABLED = True
     STATICFILES_LOCATION = 'static'
     STATICFILES_STORAGE = 'illic.custom_storages.StaticStorage'
-    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN,
+                                     STATICFILES_LOCATION)
 
 MEDIA_ROOT = 'media'
 MEDIAFILES_LOCATION = 'media'
